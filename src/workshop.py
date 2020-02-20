@@ -13,5 +13,9 @@ def add(numA, numB):
     return numA + numB
 
 def multiply(df):
-    pass
-    
+    return df * 10
+
+def impute_nan(df):
+    for col in df.columns:
+        df[col] = df[col].fillna(df[col].dropna().median())
+    return df
