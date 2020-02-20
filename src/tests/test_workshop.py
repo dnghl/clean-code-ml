@@ -45,7 +45,7 @@ class TestWorkshop(unittest.TestCase):
         df_actual = impute_nan(df_test)
 
         # assert
-        assert_frame_equal(df_expected, df_test, check_dtype = False)
+        assert_frame_equal(df_expected, df_actual, check_dtype = False)
 
     def test_get_gamily_size_should_return_df_with_correct_FamilySize_and_IsAlone_col(self):
         # arrange
@@ -61,3 +61,6 @@ class TestWorkshop(unittest.TestCase):
         
         # act
         df_actual = get_is_alone()
+
+        # assert
+        assert_frame_equal(df_expected, df_actual, check_dtype = False)
